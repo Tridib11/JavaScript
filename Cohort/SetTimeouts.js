@@ -1,3 +1,4 @@
+"use strict";
 function count(first,last){
     var sum=0;
     for(let i=first;i<=last;i++){
