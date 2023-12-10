@@ -7,8 +7,18 @@
   - `npm run test-anagram`
 */
 
-function isAnagram(str1, str2) {
-
+function isAnagram(str1,str2)
+{
+    let str_1=str1.toLowerCase().split('').sort().join('');
+    let str_2=str2.toLowerCase().split('').sort().join('');
+    if(str_1==str_2){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
+var ans=isAnagram("rasp","pasr");
+console.log(ans)
 module.exports = isAnagram;
