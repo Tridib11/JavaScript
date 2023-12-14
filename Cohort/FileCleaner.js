@@ -16,7 +16,7 @@ function clean(data){
 }
 //reading part
 const fs=require('fs')
-const file="/workspaces/JavaScript/Cohort/cleaner.txt"
+const file="cleaner.txt"
 function readingfile(err,data){
     if(err){
         console.error(err)
