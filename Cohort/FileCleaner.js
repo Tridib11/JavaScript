@@ -1,5 +1,3 @@
-
-
 function clean(data){
     var arr=data.split(" ")
     var answerArray=[];
