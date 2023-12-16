@@ -3,7 +3,6 @@ let accountEmail="test@gmail.com"
 var accountPassword="12345"
 accountCity="Jaipur"
 //Give a (;) or don't doesn't really matter
-
 let accountState //when not assigned gives undefined
 
 // accountId=2 //not allowed
