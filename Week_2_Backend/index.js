@@ -10,7 +10,6 @@ function sum(counter){
     }
     return sum;
 }
-
 function handleFirstRequest(req,res){
     var counter=req.query.counter;//query counter
     var calsulatedSum=sum(counter);//query counter
@@ -18,8 +17,19 @@ function handleFirstRequest(req,res){
     var answer="The sum is "+calsulatedSum;
     res.send(answer);
 }
+function createUser(req,res){
+    res.send("Just checking if the post working")
+} 
+function modify(req,res){
+    res.send("Just checking if the put is working")
+}
+function deleteCheck(req,res){
+    res.send("Just checking if the delete is working or not")
+}
 app.get('/handleSum', handleFirstRequest)
-
+app.post('/createuser',createUser)
+app.put('/modifyuser',modify)
+app.delete('/deleteuser',deleteCheck)
 function started(){
     console.log("Example app listening on port "+port);
 }
