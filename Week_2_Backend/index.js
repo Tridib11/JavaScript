@@ -39,16 +39,6 @@ app.listen(port, started)
 
 
 
-
-
-
-
-
-
-
-
-
-
 // const fs=require("fs");
 // const express=require("express");
 // function callbackFn(err,data){
