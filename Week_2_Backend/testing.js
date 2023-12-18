@@ -2,8 +2,6 @@ const express=require('express')
 const app=express()
 const port =3000
 
-
-
 function sum(counter){
     var sum=0;
     for(var i=0;i<=counter;i++){
