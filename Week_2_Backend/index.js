@@ -3,6 +3,18 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+
+
+//Middlewares
+
+function middleware1(req,res,next){
+    console.log("From inside middleware "+ req.headers.counter)
+    // res.send("Error from inside middleware")
+    next();
+}
+
+app.use(middleware1);
+
 function sum(counter){
     var sum=0;
     for(var i=0;i<=counter;i++){
@@ -11,8 +23,10 @@ function sum(counter){
     return sum;
 }
 function handleFirstRequest(req,res){
-    var counter=req.query.counter;//query counter
-    var calsulatedSum=sum(counter);//query counter
+    console.log(req.headers);
+    var counter=req.headers.counter;// header counter
+    // var counter=req.query.counter;//query counter
+    var calsulatedSum=sum(counter);
     console.log(calsulatedSum);
     var answer="The sum is "+calsulatedSum;
     res.send(answer);
@@ -26,10 +40,10 @@ function modify(req,res){
 function deleteCheck(req,res){
     res.send("Just checking if the delete is working or not")
 }
-app.get('/handleSum', handleFirstRequest)
-app.post('/createuser',createUser)
-app.put('/modifyuser',modify)
-app.delete('/deleteuser',deleteCheck)
+//app.get('/handleSum', handleFirstRequest)
+app.post('/createuser',handleFirstRequest)
+//app.put('/modifyuser',modify)
+//app.delete('/deleteuser',deleteCheck)
 
 function started(){
     console.log("Example app listening on port "+port);
