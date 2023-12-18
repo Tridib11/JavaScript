@@ -5,7 +5,7 @@ const port = 3000
 
 
 
-//Middlewares
+Middlewares
 
 function middleware1(req,res,next){
     console.log("From inside middleware "+ req.headers.counter)
@@ -40,8 +40,8 @@ function modify(req,res){
 function deleteCheck(req,res){
     res.send("Just checking if the delete is working or not")
 }
-//app.get('/handleSum', handleFirstRequest)
-app.post('/createuser',handleFirstRequest)
+app.get('/handleSum', handleFirstRequest)
+// app.post('/createuser',handleFirstRequest)
 //app.put('/modifyuser',modify)
 //app.delete('/deleteuser',deleteCheck)
 
