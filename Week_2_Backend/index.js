@@ -27,14 +27,75 @@ function sum(counter){
     }
     return sum;
 }
-function handleFirstRequest(req,res){
-    //for body parsing
+function mul(counter){
+    var answer=1;
+    for(var i=1;i<=counter;i++){
+        answer*=i;
+    }
+    return answer;
+}
 
-    console.log(req.body)//for body parsing
-    var counter1=req.body.counter;//for body parsing
-    var calculatedsum=sum(counter1);//for body parsing
-    var answer="The sum is "+calculatedsum;//for body parsing
-    res.send(answer)//for body parsing
+  //returning HTML from server
+
+  function givePage(req,res){
+    res.send(`
+    <head>
+        <title>
+            hello from page
+        </title>
+    </head>
+
+    <body>
+        <b><h1>hi there</h1></b>
+    </body>
+    `)
+    // var obj={
+    //     "hey":"kdhfkdsf"
+    // }
+    // res.send(obj)
+  }
+
+
+
+
+function handleFirstRequest(req,res){
+
+
+
+    //json : Javascript Object Notation 
+    //returning json from server 
+    // var counter=req.body.counter;
+    // var calculatedsum=sum(counter);
+    // var calculatedmul=mul(counter);
+    // var answerObject={
+    //     sum:calculatedsum,
+    //     mul:calculatedmul
+    // }
+    // res.status(200).send(answerObject)
+
+
+
+    //changing status codes
+
+
+    // var counter=req.body.counter;
+    // if(counter<100000){
+    //     var calculatedsum=sum(counter);
+    //     var answer="The sum is "+calculatedsum;
+    //     res.send(answer);
+    // }else{
+    //     res.status(411).send("You have sent a big number")
+    // }
+
+
+
+    // //for body parsing
+
+    // console.log(req.body)//for body parsing
+    // var counter1=req.body.counter;//for body parsing
+    // var calculatedsum=sum(counter1);//for body parsing
+    // var answer="The sum is "+calculatedsum;//for body parsing
+    // res.send(answer)//for body parsing
  
  
  
@@ -59,10 +120,20 @@ function modify(req,res){
 function deleteCheck(req,res){
     res.send("Just checking if the delete is working or not")
 }
+
+
+//routes
+
+
+
 // app.get('/handleSum', handleFirstRequest)
 app.post('/createuser',handleFirstRequest)
 //app.put('/modifyuser',modify)
 //app.delete('/deleteuser',deleteCheck)
+app.get('/',givePage);
+
+
+
 
 function started(){
     console.log("Example app listening on port "+port);
@@ -79,13 +150,3 @@ app.listen(port, started)
 //     console.log(data);
 // }
 // fs.readFile("a.txt","utf-8",callbackFn);
-
-
-
-
-
-
-
-
-
-
