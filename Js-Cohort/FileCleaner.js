@@ -10,7 +10,6 @@ function clean(data){
     }
     var answerString=answerArray.join(" ")
     return answerString
-
 }
 //reading part
 const fs=require('fs')
@@ -24,7 +23,6 @@ function readingfile(err,data){
     fs.writeFile(file,cleanData,'utf8',fileWritten);
 }
 fs.readFile(file,"utf8",readingfile)
-
 function fileWritten(){
     console.log("Operation Successfull");
 }
