@@ -13,7 +13,7 @@
 // main();
 
 
-//Async/Await Syntax
+//Async/Await Syntax  (new way of using promises)
 
 function AsyncFunction(){
     let p=new Promise(function(resolve){
