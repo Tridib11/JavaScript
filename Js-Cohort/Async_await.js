@@ -12,7 +12,6 @@
 // }
 // main();
 
-
 //Async/Await Syntax  (new way of using promises)
 
 function AsyncFunction(){
