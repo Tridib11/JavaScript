@@ -7,11 +7,12 @@ function calculateSum(num){
         sum+=i;
     }
     return sum;
-
 }
 
 function test(req,res){
-    let answer=calculateSum(100)
+    var counter=req.query.counterh;
+    // let answer=calculateSum(100)
+    var answer=calculateSum(counter)
     res.send(`The calculated sum is ${answer}`)
 }
 app.get('/',test)
