@@ -19,7 +19,7 @@ function AsyncFunction(){
         resolve("hi there")
     })
     return p
-}
+} 
 async function main(){
     const val=await AsyncFunction()
     console.log(val); 
