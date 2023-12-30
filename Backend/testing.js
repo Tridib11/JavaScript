@@ -27,15 +27,26 @@ function calculateSum(num){
 }
 
 function test(req,res){
-    console.log(req.body);
-    // console.log(req.headers);
-    var counter=req.headers.counterh;
-    // let answer=calculateSum(100)
-    var answer=calculateSum(counter)
-    res.send(`The calculated sum is ${answer}`)
+    // console.log(req.body);
+    // // console.log(req.headers);
+    // var counter=req.headers.counterh;
+    // // let answer=calculateSum(100)
+    // var answer=calculateSum(counter)
+    // res.send(`The calculated sum is ${answer}`)
+
+
+
+
+
+    var counter=req.query.counter
+    var calculatedSum=calculateSum(counter)
+    var answerObject={
+        sum:calculatedSum
+    }
+    res.send(answerObject)
 }
-//app.get('/',test)
-app.post('/',test)
+app.get('/',test)
+// app.post('/',test)
 function portTesting(){
     console.log(`Listning on port ${port}`);
 }
