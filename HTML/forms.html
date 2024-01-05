@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Form to apply</h1>
+    <form action="post">
+      <div>
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your Username"
+        />
+      </div>
+
+      <div>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label>
+        <input type="radio" id="Female" name="gender" value="Female" />
+        <label for="Female">Female</label>
+      </div>
+      <br />
+
+      <div>
+        <input type="checkbox" id="subscribe" name="subscribe" value="yes" />
+        <label for="subscribe">subscribe to new's letter</label>
+      </div>
+
+      <div>
+        <textarea name="comment" id="" cols="50" rows="4">
+Enter your comment here...
+        </textarea>
+      </div>
+
+      <div>
+        <select name="Fruits" id="">
+          <option value="apple">Apple</option>
+          <option value="banana">Banana</option>
+          <option value="cherry">Cherry</option>
+        </select>
+      </div>
+    </form>
+  </body>
+</html>
