@@ -44,6 +44,25 @@ html,body{
 
 
 #car1{
-    width:110px;
     
+    width:100px;
+    height: 120px;
+    background-color: red;
+
+}
+
+#car2{
+    position: absolute;
+    /* without position top left nahi chalega
+    top: 20%;
+    left: 40%; */
+    width: 110px;
+    height: 90px;
+    background-color: blueviolet;
+}
+
+#car3{
+    width: 130px;
+    height: 110px;
+    background-color: green;
 }
