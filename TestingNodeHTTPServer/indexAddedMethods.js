@@ -12,9 +12,16 @@ const myServer=http.createServer((req,res)=>{
     var logs=` Request type : ${req.method},Username : ${username}, Id : ${id}, Searched : ${search} \n`
     fs.appendFile("./logs.txt",logs,(err,data)=>{
         switch(myUrl.pathname){
-            case '/' : res.end("Homepage")
+            case '/' : if(req.method==='GET') res.end(`Homepage ${req.method}`)
             break
-            case '/about' : res.end(`Hey ${username}, Id : ${id}, Searched ${search} `)
+            case '/about' : if(req.method==='GET') res.end(`Hey ${username}, Id : ${id}, Searched ${search} ,Method ${req.method}} `)
+            break
+            case '/Signup': 
+            if(req.method==='GET') res.end("This is a signup form")
+            else if(req.method==='POST'){
+                //DB Query
+                res.end("Successfull")
+            }
             break
             case '/results': 
             const search=myUrl.query.search_query

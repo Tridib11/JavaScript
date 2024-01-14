@@ -1,5 +1,9 @@
-
- undefined, Id : undefined, Searched undefined 
-Youtube url Search:Here are your results for ticket to explore pizza 
- undefined, Id : undefined, Searched undefined 
-Youtube url Search:Here are your results for ticket to explore pizza 
+ Request type : GET,Username : undefined, Id : undefined, Searched : undefined 
+ Request type : GET,Username : undefined, Id : undefined, Searched : undefined 
+ Request type : GET,Username : undefined, Id : undefined, Searched : undefined 
+ Request type : GET,Username : undefined, Id : undefined, Searched : undefined 
+ Request type : GET,Username : undefined, Id : undefined, Searched : undefined 
+ Request type : GET,Username : undefined, Id : undefined, Searched : undefined 
+ Request type : POST,Username : undefined, Id : undefined, Searched : undefined 
+ Request type : POST,Username : undefined, Id : undefined, Searched : undefined 
+ Request type : POST,Username : undefined, Id : undefined, Searched : undefined 
