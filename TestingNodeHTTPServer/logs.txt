@@ -7,3 +7,4 @@
  Request type : POST,Username : undefined, Id : undefined, Searched : undefined 
  Request type : POST,Username : undefined, Id : undefined, Searched : undefined 
  Request type : POST,Username : undefined, Id : undefined, Searched : undefined 
+ Request type : GET,Username : undefined, Id : undefined, Searched : undefined 
