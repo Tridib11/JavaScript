@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM - Query Selector</title>
+  </head>
+  <body>
+    <nav class="block">
+      <p class="paragraph">Welcome to my website</p>
+    </nav>
+    <div class="block">
+      <h4 id="name-block">Hey there, My name is <span id="username">Tridib Ghosh</span></h4>
+      <p class="paragraph">Here is a code for you</p>
+      <pre><code>console.log('Hey there')</code></pre>
+    </div>
+    <!-- <button onclick="console.log('Hey i am clicked')">CLick me</button> -->
+
+    <!-- <button onclick="handleButtonClick()">Click me</button> -->
+
+
+    <button id="clickButton">
+        Click me
+    </button>
+    <script>
+      // function handleButtonClick() {
+      //   console.log("Hey i am clicked");
+      //   alert("I am clicked");
+      // }
+        
+      //Not preferred way
+      
+      const el=document.getElementById("clickButton")
+      const name=document.getElementById("name-block")
+
+      /*Whats the problem with this way is that when there will be a next function that says el.onclick so what will happen is tht the previous function will get overridden by the new function */
+      /*el.onclick=()=>{
+        console.log("Hey i am clicked");
+      }
+      */
+
+      //Preferred way
+      
+      // el.addEventListener("click",()=>{
+      //   console.log("Hey i am clicked");
+      // })
+
+          //or
+
+        // function doSomething(){
+        //   console.log("HEy i am clicked");
+        // }
+
+        // el.addEventListener("click",doSomething)
+
+
+        // el.addEventListener("click",()=>{
+        //   name.style.color="red"
+        // })
+
+
+        //Changing the color
+
+        // el.addEventListener("click",()=>{
+        //   if(name.style.color==="red"){
+        //     name.style.color="blue"
+        //   }
+        //   else{
+        //     name.style.color="red"
+        //   }
+        // })
+
+
+        //Clicking an removing evrything
+
+
+        const allChildren=document.querySelector("body").children
+        for(let i=0;i<allChildren.length;i++){
+          allChildren.item(i).addEventListener("click",()=>{
+            allChildren.item(i).remove()
+          })
+        }
+        // console.log();
+
+    </script>
+  </body>
+</html>
