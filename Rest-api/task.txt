@@ -1,5 +1,5 @@
 REST API - JSON
-
+Data Set link : https://www.mockaroo.com/
 GET /users - Render an HTML file - Done  // for browser devices
 GET /api/users - List all users - Done    //when some devices like alexa and mobile...
 
