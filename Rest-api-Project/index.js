@@ -5,7 +5,7 @@ const fs = require("fs");
 const port = 8000;
 
 //Middleware - plugin
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false })); //to view body
 
 // custom- midlewares
 
@@ -41,6 +41,7 @@ app
   .get((req, res) => {
     const id = Number(req.params.id);
     const user = users.find((user) => user.id === id);
+    if(!user) return res.status(404).json({msg : `User with ${id} is unavailabe`})
     return res.json(user);
   })
 
