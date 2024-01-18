@@ -7,6 +7,15 @@ const port = 8000;
 //Middleware - plugin
 app.use(express.urlencoded({ extended: false }));
 
+// custom- midlewares
+
+app.use((req,res,next)=>{
+    fs.appendFile("log.txt",`\n${Date.now()} : ${req.method} : ${req.path}`,(err,data)=>{
+        next()
+    })
+    
+})
+
 /*Returns middleware that only parses urlencoded bodies and only looks at requests where the Content-Type header matches the type option */
 
 //routes
