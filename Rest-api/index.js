@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 // custom- midlewares
 
 app.use((req,res,next)=>{
-    fs.appendFile("log.txt",`\n${Date.now()} : ${req.method} : ${req.path}`,(err,data)=>{
+    fs.appendFile("log.txt",`\nIP ${req.ip}, ${Date.now()},  ${req.method},  ${req.path}`,(err,data)=>{
         next()
     })
     
