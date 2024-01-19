@@ -1,41 +1,113 @@
 <!DOCTYPE html>
-<lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo-app</title>
-</head>
-<script>
-    function parsedResponse(data){
-        console.log(data);
-    }
-     function callback(resp){
-            resp.json().then(parsedResponse)
-        }
-    // function onPress(){       
-    //     fetch("http://localhost:3001/todos",{
-    //         method:"GET"
-    //     }).then(callback)
-    // }
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+  </head>
+  <script>
+    //Send TODO
+    function parsedResponse(data) {
+      console.log(data);
+      var parentElement = document.getElementById("mainArea");
+      var childElement = document.createElement("div");
 
-    function onPress(){       
-        fetch("http://localhost:3001/todos",{
-            method:"POST",
-            body:JSON.stringify({
-                title:"gym",
-                description:"go to gym"
-            }),
-            headers:{
-                "Content-Type":"application/json"
-            }
-        }).then(callback)
+      var grandChildElement0 = document.createElement("span");
+      grandChildElement0.innerHTML = data.id;
+
+      var grandChildElement1 = document.createElement("span");
+      grandChildElement1.innerHTML = data.title;
+
+      var grandChildElement2 = document.createElement("span");
+      grandChildElement2.innerHTML = data.description;
+
+      var grandChildElement3 = document.createElement("button");
+      grandChildElement3.innerHTML = "Delete";
+
+      childElement.appendChild(grandChildElement0);
+      childElement.appendChild(grandChildElement1);
+      childElement.appendChild(grandChildElement2);
+      childElement.appendChild(grandChildElement3);
+
+      parentElement.appendChild(childElement);
     }
-</script>
-<body>
+
+    function callback(resp) {
+      resp.json().then(parsedResponse);
+    }
+
+    function onSendButtonPress() {
+      var title = document.getElementById("title1").value;
+      var description = document.getElementById("description").value;
+
+      fetch("http://localhost:3001/todos", {
+        method: "POST",
+        body: JSON.stringify({
+          title: title,
+          description: description,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then(callback);
+    }
+
+    function deleteTodo(id) {
+    fetch("http://localhpst:8000")
+}
+
+
+    //Get todo
+    function todosCallBack(data) {
+      console.log(data);
+      var parentElement = document.getElementById("mainArea");
+      for (var i = 0; i < data.length; i++) {
+        var childElement = document.createElement("div");
+
+        var grandChildElement0 = document.createElement("span");
+        grandChildElement0.innerHTML = data[i].id;
+
+        var grandChildElement1 = document.createElement("span");
+        grandChildElement1.innerHTML = data[i].title;
+
+        var grandChildElement2 = document.createElement("span");
+        grandChildElement2.innerHTML = data[i].description;
+
+        var grandChildElement3 = document.createElement("button");
+        grandChildElement3.innerHTML = "Delete";
+        grandChildElement3.setAttribute(
+    "onclick",
+    "deleteTodo(" + data[i].id + ")");
+
+        childElement.appendChild(grandChildElement0);
+        childElement.appendChild(grandChildElement1);
+        childElement.appendChild(grandChildElement2);
+        childElement.appendChild(grandChildElement3);
+
+        parentElement.appendChild(childElement);
+      }
+
+      // parentElement.innerHTML=JSON.stringify(data)
+    }
+    function callback2(resp) {
+      resp.json().then(todosCallBack);
+    }
+    function onGetButtonPress() {
+      fetch("http://localhost:3001/todos", {
+        method: "GET",
+      }).then(callback2);
+    }
+    onGetButtonPress();
+  </script>
+  <body>
     Todo title
-    <input type="text" id="title"></input>
-    Todo description
-    <input type="text" id="title"></input>
-    <button onclick="onPress()">send todo</button>
-</body>
+    <input type="text" name="" id="title1" /><br />
+    <br />
+    Todo Description
+    <input type="text" name="" id="description" /><br />
+    <button onclick="onSendButtonPress()">Send Todo</button>
+    <hr />
+    <!-- <button onclick="onGetButtonPress()">Get Todo</button> -->
+    <div id="mainArea"></div>
+  </body>
 </html>
