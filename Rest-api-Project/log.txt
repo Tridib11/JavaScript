@@ -149,3 +149,4 @@ IP ::1, 1705755109224,  GET,  /users
 IP ::1, 1705755230397, GET, /api/users
 IP ::1, 1705755256102, DELETE, /api/users/65abb62fb95fea35aedf06e0
 IP ::1, 1705755264796, GET, /api/users
+IP ::1, 1705787357092, GET, /users
