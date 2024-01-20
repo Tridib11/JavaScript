@@ -46,13 +46,13 @@ app.use(express.urlencoded({ extended: false })); //to view body
 // custom- midlewares
 
 app.use((req,res,next)=>{
-    fs.appendFile("log.txt",`\nIP ${req.ip}, ${Date.now()},  ${req.method},  ${req.path}`,(err,data)=>{
+    fs.appendFile("log.txt",`\nIP ${req.ip}, ${Date.now()}, ${req.method}, ${req.path}`,(err,data)=>{
         next()
-    })
-    
+    })    
 })
 
-/*Returns middleware that only parses urlencoded bodies and only looks at requests where the Content-Type header matches the type option */
+/*Returns middleware that only parses urlencoded bodies and only looks at requests where 
+the Content-Type header matches the type option */
 
 //routes
 
@@ -166,7 +166,7 @@ app.post("/api/users", async(req, res) => {
 
 
   //mongodb
-  const result=await User.create({
+  await User.create({
     firstName:body.first_name,
     lastName:body.last_name,
     email:body.email,

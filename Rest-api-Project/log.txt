@@ -145,3 +145,7 @@ IP ::1, 1705754565933,  PATCH,  /api/users/65ab96d5efd4679cd119fea3
 IP ::1, 1705754568248,  GET,  /api/users
 IP ::1, 1705754944125,  PATCH,  /api/users/65ab96d5efd4679cd119fea3
 IP ::1, 1705754947815,  GET,  /api/users
+IP ::1, 1705755109224,  GET,  /users
+IP ::1, 1705755230397, GET, /api/users
+IP ::1, 1705755256102, DELETE, /api/users/65abb62fb95fea35aedf06e0
+IP ::1, 1705755264796, GET, /api/users
