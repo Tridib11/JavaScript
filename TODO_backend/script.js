@@ -68,8 +68,7 @@ app
         (err, data) => {
           return res.json({
             status: "Success"
-            
-          });
+          }).send(req.params.id);
         }
       );
     } else {
