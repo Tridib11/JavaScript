@@ -168,3 +168,4 @@ IP ::1, 1705792567156, POST, /api/user
 IP ::1, 1705792570574, GET, /api/user
 IP ::1, 1705792594186, DELETE, /api/user/65ab96d5efd4679cd119fea3
 IP ::1, 1705792600220, GET, /api/user
+IP ::1, 1705800030855, GET, /favicon.ico
