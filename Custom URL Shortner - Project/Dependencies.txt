@@ -1,0 +1,5 @@
+npm init -y
+npm i express
+npm i mongoose
+npm i nanoid 
+npm i shortid (because nanoid was not working)
