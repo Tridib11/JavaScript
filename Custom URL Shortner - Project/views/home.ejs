@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>URL Shortner</title>
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -32,7 +32,7 @@
     <p>URL Generated : http://localhost:8001/url/<%= id %></p>
     <% } %>
     <div>
-      <form method="POST" action="/url/new">
+      <form method="POST" action="/url/new" target="_blank">
         <label for="">Enter your orignal URL</label>
         <input
           type="text"
