@@ -7,6 +7,8 @@ const URL=require("./models/url")
 const path=require("path")
 const staticroute=require("./routes/staticRouter")
 
+const userRoute=require('./routes/user')
+
 connectToMongoDB('mongodb://localhost:27017/short-url').then(()=>console.log("MongoDB connected"))
 
 //setting up ejs
@@ -16,6 +18,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
 app.use("/",urlRoute)
+app.use("/user",userRoute)
+
 app.use("/home",staticroute)
 
 
