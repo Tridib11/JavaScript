@@ -1,0 +1,17 @@
+{
+  "name": "mycontacts-backend-api",
+  "version": "1.0.0",
+  "description": "This is the express project for my contact backend api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Tridib",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.3"
+  }
+}
