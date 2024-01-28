@@ -1,7 +1,7 @@
 const express=require("express")
 const bodyParser=require("body-parser")
 const fs=require('fs')
-
+const path=require("path")
 const app=express()
 
 app.use(bodyParser.json())
@@ -74,6 +74,9 @@ app.delete("/todos/:id",(req,res)=>{
             })
         }
     })
+})
+app.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"index.html"))
 })
 
 app.listen(3000,()=>{
