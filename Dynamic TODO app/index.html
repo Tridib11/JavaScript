@@ -1,39 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo app</title>
-</head>
-<script>
-    function parsedResponse(data){
-        console.log(data);
+  </head>
+  <script>
+    //GET
+    function todosCallback(data) {
+      var parentElement = document.getElementById("mainArea");
+      for (var i = 0; i < data.length; i++) {
+        var childElement = document.createElement("div");
+
+        var grandChildElement = document.createElement("span");
+        grandChildElement.innerHTML = data[i].title;
+        var grandChildElement2 = document.createElement("span");
+        grandChildElement2.innerHTML = data[i].description;
+        var grandChildElement3 = document.createElement("button");
+        grandChildElement3.innerHTML = "Delete";
+
+        childElement.appendChild(grandChildElement);
+        childElement.appendChild(grandChildElement2);
+        childElement.appendChild(grandChildElement3);
+
+        parentElement.appendChild(childElement);
+      }
     }
-     function callback(resp){
-        resp.json().then(parsedResponse)
-     }
-    function onPress(){
-        var title=document.getElementById("title1").value;
-        var description=document.getElementById("description1").value;
-        console.log(title);
-        fetch("http://localhost:3000/todos",{
-            method:"POST",
-            body:JSON.stringify({
-                title:title,
-                description:description
-            }),
-            headers:{
-                "Content-Type":"application/json"
-            }
-        }).then(callback)
+    function callback2(resp) {
+      resp.json().then(todosCallback);
     }
-</script>
-<body>
+    function getData() {
+      fetch("http://localhost:3000/todos", {
+        method: "GET",
+      }).then(callback2);
+    }
+
+    getData();
+
+    //POST
+    function parsedResponse(data) {
+      console.log(data);
+    }
+    function callback(resp) {
+      resp.json().then(parsedResponse);
+    }
+    function onPress() {
+      var title = document.getElementById("title1").value;
+      var description = document.getElementById("description1").value;
+      console.log(title);
+      fetch("http://localhost:3000/todos", {
+        method: "POST",
+        body: JSON.stringify({
+          title: title,
+          description: description,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then(callback);
+    }
+  </script>
+  <body>
     Todo title
-    <input type="text" name="" id="title1">
-    <br><br>
+    <input type="text" name="" id="title1" />
+    <br /><br />
     Todo description
-    <input type="text" name="" id="description1"><br><br>
+    <input type="text" name="" id="description1" /><br /><br />
     <button onclick="onPress()">Send todo</button>
-</body>
+    <div id="mainArea"></div>
+  </body>
 </html>
