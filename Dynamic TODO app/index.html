@@ -13,11 +13,14 @@
         resp.json().then(parsedResponse)
      }
     function onPress(){
+        var title=document.getElementById("title1").value;
+        var description=document.getElementById("description1").value;
+        console.log(title);
         fetch("http://localhost:3000/todos",{
             method:"POST",
             body:JSON.stringify({
-                title:"rohan",
-                description:"ROhan shutup"
+                title:title,
+                description:description
             }),
             headers:{
                 "Content-Type":"application/json"
@@ -27,10 +30,10 @@
 </script>
 <body>
     Todo title
-    <input type="text" name="" id="title">
+    <input type="text" name="" id="title1">
     <br><br>
     Todo description
-    <input type="text" name="" id="title"><br><br>
+    <input type="text" name="" id="description1"><br><br>
     <button onclick="onPress()">Send todo</button>
 </body>
 </html>

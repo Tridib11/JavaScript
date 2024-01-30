@@ -2,8 +2,10 @@ const express=require("express")
 const bodyParser=require("body-parser")
 const fs=require('fs')
 const path=require("path")
+const cors=require("cors")
 const app=express()
 
+app.use(cors())
 app.use(bodyParser.json())
 
 function findIndex(arr,id){
@@ -75,9 +77,9 @@ app.delete("/todos/:id",(req,res)=>{
         }
     })
 })
-app.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname,"index.html"))
-})
+// app.get("/",(req,res)=>{
+//     res.sendFile(path.join(__dirname,"index.html"))
+// })
 
 app.listen(3000,()=>{
     console.log("Server started at port 3000")
