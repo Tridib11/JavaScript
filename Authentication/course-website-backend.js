@@ -164,19 +164,13 @@ app.post('/users/courses/:courseId', authenticateJwt, (req, res) => {
     res.status(404).json({ message: 'Course not found' });
   }
 });
-app.get("/users/purchasedCourses", authenticateJwt, (req, res) => {
-  // const purchasedCourses = COURSES.filter(c => req.user.purchasedCourses.includes(c.id));
-  // We need to extract the complete course object from COURSES
-  // which have ids which are present in req.user.purchasedCourses
-  var purchasedCourseIds = req.user.purchasedCourses;
-  var purchasedCourses = [];
-  for (let i = 0; i < COURSES.length; i++) {
-    if (purchasedCourseIds.indexOf(COURSES[i].id) !== -1) {
-      purchasedCourses.push(COURSES[i]);
-    }
+app.get('/users/purchasedCourses', authenticateJwt, (req, res) => {
+  const user = USERS.find(u => u.username === req.user.username);
+  if (user && user.purchasedCourses) {
+    res.json({ purchasedCourses: user.purchasedCourses });
+  } else {
+    res.status(404).json({ message: 'No courses purchased' });
   }
-
-  res.json({ purchasedCourses });
 });
 app.listen(3000, () => {
   console.log("Server started at port 3000");
