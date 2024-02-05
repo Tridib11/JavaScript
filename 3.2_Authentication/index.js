@@ -59,6 +59,9 @@ app.get("/users", (req, res) => {
   try {
     const decoded = jwt.verify(token, jwtPassword);
     const username = decoded.username;
+    res.json({
+        users:allUsers
+    })
   } catch (err) {
     return res.status(403).json({
       msg: "Invalid token",
