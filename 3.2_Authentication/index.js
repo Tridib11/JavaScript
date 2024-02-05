@@ -4,6 +4,8 @@ const app = express();
 
 const jwtPassword = "123456";
 
+app.use(express.json())
+
 const allUsers = [
   {
     username: "tridib@mail.com",
@@ -39,7 +41,7 @@ function userExists(username, password) {
 app.post("/signin", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
-  if (!userExists) {
+  if (!userExists(username,password)) {
     return res.status(404).json({
       message: "User doesn't exists",
     });
