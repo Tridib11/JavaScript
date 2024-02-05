@@ -70,7 +70,7 @@ app.get("/users", (req, res) => {
     // res.json({
     //     users: allUsers.filter(value => value.username !== username)
     //   });
-      
+
   } catch (err) {
     return res.status(403).json({
       msg: "Invalid token",
