@@ -29,3 +29,7 @@ app.post("/signup", async (req, res) => {
     })
 });
 
+app.listen(3000,()=>{
+    console.log("3000");
+})
+
