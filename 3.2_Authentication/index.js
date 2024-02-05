@@ -4,7 +4,7 @@ const app = express();
 
 const jwtPassword = "123456";
 
-app.use(express.json())
+app.use(express.json());
 
 const allUsers = [
   {
@@ -18,6 +18,7 @@ const allUsers = [
     name: "raman",
   },
 ];
+
 // function userExists(username, password) {
 //   const userExists = false;
 //   for (let i = 0; i < allUsers.length; i++) {
@@ -34,16 +35,17 @@ const allUsers = [
 //--or--
 
 function userExists(username, password) {
-    return allUsers.find(user => user.username === username && user.password === password);
-  }
-  
+  return allUsers.find(
+    (user) => user.username === username && user.password === password
+  );
+}
 
 app.post("/signin", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
-  if (!userExists(username,password)) {
+  if (!userExists(username, password)) {
     return res.status(404).json({
-      message: "User doesn't exists",
+      message: "User doesn't exists in the database",
     });
   }
   var token = jwt.sign({ username: username }, jwtPassword); //encrypts the username
