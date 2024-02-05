@@ -48,7 +48,7 @@ app.post("/signin", (req, res) => {
       message: "User doesn't exists in the database",
     });
   }
-  var token = jwt.sign({ username: username }, jwtPassword); //encrypts the username
+  var token = jwt.sign({ username: username, password: password }, jwtPassword); //encrypts the username
   return res.json({
     token,
   });
@@ -59,15 +59,26 @@ app.get("/users", (req, res) => {
   try {
     const decoded = jwt.verify(token, jwtPassword);
     const username = decoded.username;
+    const password = decoded.password;
     res.json({
-        users:allUsers
-    })
+      user: username,
+      password: password,
+    },
+    );
+
+    // //filtering out the username that doesnot contains the name
+    // res.json({
+    //     users: allUsers.filter(value => value.username !== username)
+    //   });
+      
   } catch (err) {
     return res.status(403).json({
       msg: "Invalid token",
     });
   }
 });
+
+
 
 app.listen(3000, () => {
   console.log("Server started at port 3000");
