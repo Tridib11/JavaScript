@@ -19,22 +19,30 @@ setInterval(() => {
 }, 1000);
 
 function rateLimitCount(req, res, next) {
-    const userId = req.headers["user-id"];
-    if (numberOfRequestsForUser[userId]) {
-      numberOfRequestsForUser[userId] += 1;
-      if (numberOfRequestsForUser[userId] > 5) {
-        res.status(404).send("No entry");
-      } else {
-        next();
-      }
+  const userId = req.headers["user-id"];
+  if (numberOfRequestsForUser[userId]) {
+    numberOfRequestsForUser[userId] += 1;
+    if (numberOfRequestsForUser[userId] > 5) {
+      res.status(404).send("No entry");
     } else {
-      numberOfRequestsForUser[userId] = 1;
       next();
     }
+  } else {
+    numberOfRequestsForUser[userId] = 1;
+    next();
   }
+}
 
-  app.get('/user',rateLimitCount, (req, res) => {
-    res.status(200).json({ name: "John" })
+app.get("/user", rateLimitCount, (req, res) => {
+    // throw new Error("Some error")
+    res.status(200).json({ name: "John" });
+});
+
+app.use((err,req,res,next)=>{
+    res.status(404).send({})
 })
 
-app.listen(3000,()=>{console.log("3000");})
+app.listen(3000, () => {
+  console.log("3000");
+});
+
