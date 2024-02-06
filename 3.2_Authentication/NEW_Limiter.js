@@ -10,16 +10,25 @@ You have been given a numberOfRequestsForUser object to start off with which
 clears every one second
 */
 
-const express=require("express")
-const app=express()
+const express = require("express");
+const app = express();
 
+let numberOfRequestsForUser = {};
+setInterval(() => {
+  numberOfRequestsForUser = {};
+}, 1000);
 
-let numberOfRequestsForUser={}
-setInterval(()=>{
-    numberOfRequestsForUser={}
-},1000)
-
-app.use((req,res,next)=>{
-    const userId=req.headers["user-id"]
-    
-})
+app.use((req, res, next) => {
+  const userId = req.headers["user-id"];
+  if (numberOfRequestsForUser[userId]) {
+    numberOfRequestsForUser[userId] += 1;
+    if (numberOfRequestsForUser[userId] > 5) {
+      res.status(404).send("No entry");
+    } else {
+      next();
+    }
+  } else {
+    numberOfRequestsForUser[userId] = 1;
+    next();
+  }
+});
