@@ -18,17 +18,23 @@ setInterval(() => {
   numberOfRequestsForUser = {};
 }, 1000);
 
-app.use((req, res, next) => {
-  const userId = req.headers["user-id"];
-  if (numberOfRequestsForUser[userId]) {
-    numberOfRequestsForUser[userId] += 1;
-    if (numberOfRequestsForUser[userId] > 5) {
-      res.status(404).send("No entry");
+function rateLimitCount(req, res, next) {
+    const userId = req.headers["user-id"];
+    if (numberOfRequestsForUser[userId]) {
+      numberOfRequestsForUser[userId] += 1;
+      if (numberOfRequestsForUser[userId] > 5) {
+        res.status(404).send("No entry");
+      } else {
+        next();
+      }
     } else {
+      numberOfRequestsForUser[userId] = 1;
       next();
     }
-  } else {
-    numberOfRequestsForUser[userId] = 1;
-    next();
   }
-});
+
+  app.get('/user',rateLimitCount, (req, res) => {
+    res.status(200).json({ name: "John" })
+})
+
+app.listen(3000,()=>{console.log("3000");})
