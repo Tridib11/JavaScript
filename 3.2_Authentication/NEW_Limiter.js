@@ -40,6 +40,7 @@ app.get("/user", rateLimitCount, (req, res) => {
 
 app.use((err,req,res,next)=>{
     res.status(404).send({})
+    errorCount+=1;
 })
 
 app.listen(3000, () => {
