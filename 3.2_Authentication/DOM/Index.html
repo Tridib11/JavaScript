@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="LoginForm" action="/action_page.php">
+      First name: <input type="text" name="fname" id="" />
+      <br />
+      Last Name: <input type="text" name="lname" id="" />
+      <br />
+      <input type="submit" value="submit" />
+    </form>
+
+    <p>Click the try it button to dislay the number of elements in the form</p>
+
+    <button onclick="myFunction()">Tryit</button>
+    <p>Querryall_test</p>
+    <p>Querryall_test</p>
+    <p>Querryall_test</p>
+
+    <p id="displayspace"></p>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("LoginForm").elements.length;
+        var y = document.getElementById("LoginForm").elements[0].value;
+        var z = document.getElementById("LoginForm").elements[1].value;
+        document.getElementById("displayspace").innerHTML =
+          "Found " +
+          x +
+          " elements in the form." +
+          " First name entered is: " +
+          y +
+          " . and Last name is " +
+          z;
+
+        const para = document.createElement("p");
+        para.innerHTML = "This is a paragraph created by DOM";
+        document.body.appendChild(para);
+
+
+        var paragraph=document.querySelectorAll('p')
+        paragraph.forEach(paragraph=>paragraph.style.backgroundColor="red")
+      }
+    </script>
+  </body>
+</html>
