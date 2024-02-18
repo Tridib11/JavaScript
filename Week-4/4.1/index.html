@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <script>
+    function populateDiv(){
+        alert("Hey")
+    }
+  </script>
   <body>
     <input type="text" placeholder="First Number" />
     <br />
@@ -12,6 +17,7 @@
     <input type="text" placeholder="Second Number" />
     <br />
     <br />
-    <button>Calculate sum</button>
+    <button onclick="populateDiv()">Calculate sum</button>
+    <div id="finalSum"></div>
   </body>
 </html>
