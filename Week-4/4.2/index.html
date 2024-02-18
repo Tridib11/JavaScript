@@ -9,8 +9,13 @@
     function addTodo() {
       const title = document.getElementById("title").value;
       const description = document.getElementById("description").value;
-      console.log(title);
-      console.log(description);
+      document.getElementById("container").innerHTML=`
+      <div>
+            <div>${title}</div>
+            <div>${description}</div>
+            <button>Mark as done</button>
+        </div>
+      `
     }
   </script>
   <body>
@@ -18,9 +23,10 @@
       <input type="text" name="" placeholder="title" id="title" /> <br /><br />
       <input type="text" name="" placeholder="description" id="description" />
       <br /><br />
-      <button onclick="addTodo()">Add todo</button>
-
-      
+      <button onclick="addTodo()">Add todo</button>       
+    </div>
+    <div id="container">
+        
     </div>
   </body>
 </html>
