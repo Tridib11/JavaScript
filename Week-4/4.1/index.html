@@ -6,15 +6,18 @@
     <title>Document</title>
   </head>
   <script>
-    function populateDiv(){
-        alert("Hey")
+    function populateDiv() {
+      const a = document.getElementById("firstNumber").value;
+      const b = document.getElementById("secondNumber").value;
+      const element = document.getElementById("finalSum");
+      element.innerHTML = parseInt(a)+parseInt(b) ;
     }
   </script>
   <body>
-    <input type="text" placeholder="First Number" />
+    <input id="firstNumber" type="text" placeholder="First Number" />
     <br />
     <br />
-    <input type="text" placeholder="Second Number" />
+    <input id="secondNumber" type="text" placeholder="Second Number" />
     <br />
     <br />
     <button onclick="populateDiv()">Calculate sum</button>
