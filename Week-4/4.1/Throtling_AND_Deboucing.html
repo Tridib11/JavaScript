@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    function debouncedpopulateDiv(){
+        
+    }
+    async function populateDiv() {
+      const principle = document.getElementById("principle").value;
+      const rate = document.getElementById("rate").value;
+      const time = document.getElementById("time").value;
+      const response = await fetch(
+        "https://sum-server.100xdevs.com/interest?principal=" +
+          principle +
+          "&rate=" +
+          rate +
+          "&time=" +
+          time
+      );
+      const ans = await response.text();
+      document.getElementById("Interest").innerHTML = ans;
+    }
+  </script>
+  <body>
+    <input oninput="debouncedpopulateDiv()" type="text" placeholder="principle" id="principle" /> <br />
+    <input oninput="debouncedpopulateDiv()" type="text" placeholder="rate" id="rate" /> <br />
+    <input oninput="debouncedpopulateDiv()" type="text" placeholder="time" id="time" /> <br />
+
+    <div id="Interest"></div>
+  </body>
+</html>
