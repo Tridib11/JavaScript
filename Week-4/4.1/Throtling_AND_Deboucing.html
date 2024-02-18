@@ -6,8 +6,14 @@
     <title>Document</title>
   </head>
   <script>
-    function debouncedpopulateDiv(){
-        
+    let timeout;
+    function debouncedpopulateDiv() {
+      //delay the call to populateDiv until ive not been called for 100ms
+      //and i have been called atleast once
+      clearTimeout(timeout);
+      timeout = setTimeout(function () {
+        populateDiv();
+      }, 1000);
     }
     async function populateDiv() {
       const principle = document.getElementById("principle").value;
@@ -26,9 +32,27 @@
     }
   </script>
   <body>
-    <input oninput="debouncedpopulateDiv()" type="text" placeholder="principle" id="principle" /> <br />
-    <input oninput="debouncedpopulateDiv()" type="text" placeholder="rate" id="rate" /> <br />
-    <input oninput="debouncedpopulateDiv()" type="text" placeholder="time" id="time" /> <br />
+    <input
+      oninput="debouncedpopulateDiv()"
+      type="text"
+      placeholder="principle"
+      id="principle"
+    />
+    <br />
+    <input
+      oninput="debouncedpopulateDiv()"
+      type="text"
+      placeholder="rate"
+      id="rate"
+    />
+    <br />
+    <input
+      oninput="debouncedpopulateDiv()"
+      type="text"
+      placeholder="time"
+      id="time"
+    />
+    <br />
 
     <div id="Interest"></div>
   </body>
