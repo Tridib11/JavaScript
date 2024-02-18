@@ -9,13 +9,9 @@
     function addTodo() {
       const title = document.getElementById("title").value;
       const description = document.getElementById("description").value;
-      document.getElementById("container").innerHTML=`
-      <div>
-            <div>${title}</div>
-            <div>${description}</div>
-            <button>Mark as done</button>
-        </div>
-      `
+      const outerDiv=document.createElement("div") 
+      outerDiv.innerHTML=title
+      document.getElementById('container').appendChild(outerDiv)
     }
   </script>
   <body>
