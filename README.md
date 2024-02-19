@@ -1,3 +1,12 @@
+<h1>Syllabus</h1>
+
+![Screenshot 2024-02-19 164829](https://github.com/Tridib11/Mern-Full-stack/assets/86187166/925b2cc2-d39f-45e2-bf29-6190755f1265)
+![Screenshot 2024-02-19 164844](https://github.com/Tridib11/Mern-Full-stack/assets/86187166/036961f0-6c1f-4477-a574-36900e12b6dd)
+
+
+
+
+
 # JavaScript: Unleash the Magic ✨
 
 Welcome to the world of JavaScript, where coding becomes an art and innovation knows no bounds. Here are some cool things about JavaScript that make it the superhero of web development:
