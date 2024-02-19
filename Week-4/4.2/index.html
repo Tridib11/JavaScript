@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<body>
+  <input type="text" id="title" placeholder="Todo title"></input> <br /><br />
+  <input type="text" id="description" placeholder="Todo description"></input> <br /><br />
+
+  <div id="container">
+
+  </div>
   <script>
-    let globalId = 1;
-
-    function markAsDone(todoId) {
-      const parent = document.getElementById(todoId);
-      parent.children[2].innerHTML = "Done!"
-    }
-
+    
     function createChild(title, description, id) {
       const child = document.createElement("div");
       const firstGrandParent = document.createElement("div");
@@ -25,22 +25,19 @@
       child.setAttribute("id", id);
       return child;
     }
-    function addTodo() {
-      const title = document.getElementById("title").value;
-      const description = document.getElementById("description").value;
-      const parent = document.getElementById("container");
-
-      parent.appendChild(createChild(title, description, globalId++));
+    function updateDomAccToState(state) {
+      const parent = document.getElementById("container")
+      parent.innerHTML = ""
+      for (let i = 0; i < state.length; i++) {
+        const child = createChild(state[i].title, state[i].description, state[i].id)
+        parent.appendChild(child)
+      }
     }
+    //in real world
+    window.setInterval(async function(){
+      const res=await fetch("https://sum-server.100xdevs.com/todos")
+      const json=await res.json();
+      updateDomAccToState(json.todos)
+    },5000)
   </script>
-</head>
-
-<body>
-  <input type="text" id="title" placeholder="Todo title"></input> <br /><br />
-  <input type="text" id="description" placeholder="Todo description"></input> <br /><br />
-  <button onclick="addTodo()">Add todo</button>
-
-  <div id="container">
-
-  </div>
 </body>
