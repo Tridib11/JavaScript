@@ -7,8 +7,8 @@ function App() {
       completed: false,
     },
     {
-      title: "Study DSA",
-      description: "Study dsa from 9-100",
+      title: "Study ",
+       escription: "Study Anything from 9-100",
       completed: true,
     },
   ]);
