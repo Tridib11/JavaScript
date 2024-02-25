@@ -44,3 +44,17 @@ JavaScript is the language of the web, supported by all major browsers. Write on
 JavaScript doesn't rest on its laurels. With the ECMAScript standard and regular updates, JavaScript keeps evolving. Stay on the cutting edge, experiment with new features, and be at the forefront of web development innovation.
 
 Now, dive into the enchanting world of JavaScript and let your code create wonders! 🚀✨
+
+
+
+
+
+### React Bundlers
+
+## Vite
+
+  - npm create vite@latest
+  - npm install
+  - npm run dev
+
+## Parcel
