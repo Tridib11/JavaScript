@@ -5,14 +5,11 @@ import viteLogo from "/vite.svg";
 function App() {
   return (
     <div>
-      <HeaderWithButton/>
-      <Header title="Tridib2"></Header>
-      <Header title="Tridib2"></Header>
-      <Header title="Tridib2"></Header>
+      <HeaderWithButton></HeaderWithButton>
+      <Header title="hello world"></Header>
     </div>
   );
 }
-
 function HeaderWithButton() {
   const [title, setTitle] = useState("My name is Tridib");
   function updateTitle() {
@@ -20,7 +17,7 @@ function HeaderWithButton() {
   }
   return (
     <div>
-      <button onClick={updateTitle}>Update the title</button>
+      <button onClick={updateTitle}>Update</button>
       <Header title={title}></Header>
     </div>
   );
