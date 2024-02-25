@@ -33,7 +33,7 @@ function App() {
     <div>
       <button onClick={addTodo}>Add a todo</button>
       {todos.map((todo) => (
-        <Todo title={todo.title} description={todo.description} />
+        <Todo key={todo.id} title={todo.title} description={todo.description} />
       ))}
     </div>
   );
