@@ -3,15 +3,15 @@ function App(){
         <CardWrapper innerComponent={TextComponent}></CardWrapper>
     </div>
 }
-
-function TextComponent(){
-    return <div>
-        hi there
+function CardWrapper({}){
+    return <div style={{border:"2px solid black"}}>
+        {innerComponent}
     </div>
 }
-
-function CardWrapper({}){
-
+function TextComponent(){
+   
 }
+
+
 
 export default App
