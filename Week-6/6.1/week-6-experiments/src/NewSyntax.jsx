@@ -32,6 +32,7 @@ const Body = () => {
 // };
 
 // Use React.memo on certain component which you want to re render without re rendering something some other components
+//memo lets you skip re-rendering a component when its props are unchanged.
 
 const Header=React.memo(({ title }) => {
     return <div>{title}</div>;
