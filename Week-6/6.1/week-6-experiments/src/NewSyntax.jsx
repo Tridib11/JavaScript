@@ -1,37 +1,41 @@
+// Newer syntax using React 18 features
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { useState } from "react";
 
 const Body = () => {
-  
-  return (
-    <div>
-      <HeaderWithButton/>
-      <Header title="Triidib 2" />
-      <Header title="Triidib 2" />
-      <Header title="Triidib 2" />
-      <Header title="Triidib 2" />
-      <Header title="Triidib 2" />
-    </div>
-  )
-};
+  const [title, setTitle] = useState("My name is Tridib");
 
-const HeaderWithButton = ()=>{
-  const [title,setTitle]=useState("My name is Tridib")
-  function Update(){
-    setTitle("My name is "+ Math.random())
+  function Update() {
+    setTitle("My name is " + Math.random());
   }
+
   return (
     <div>
       <button onClick={Update}>Click here to update</button>
       <Header title={title} />
-    </div>
-  )
-}
+      <Header title="Tridib 2" />
+      <Header title="Tridib 2" />
+      <Header title="Tridib 2" />
+      <Header title="Tridib 2" />
+      <Header title="Tridib 2" />
+      <Header title="Tridib 2" />
 
-const Header = ({title}) => {
-  return <div>{title}</div>;
+    </div>
+  );
 };
+
+
+
+// const Header = ({ title }) => {
+//   return <div>{title}</div>;
+// };
+
+// Use React.memo on certain component which you want to re render without re rendering something some other components
+
+const Header=React.memo(({ title }) => {
+    return <div>{title}</div>;
+  })
 
 const AppLayout = () => {
   return (
