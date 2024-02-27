@@ -2,6 +2,7 @@ function App(){
 
     return <div>
         <CardWrapper innerComponent={<TextComponent/>} />
+        <CardWrapper innerComponent={<TextComponent/>} />
     </div>
 }
 
