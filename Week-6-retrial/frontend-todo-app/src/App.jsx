@@ -9,7 +9,7 @@
 // }
 // ]
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 let todo = {
   title: "go to the gym",
@@ -28,28 +28,36 @@ function App() {
     id: 1,
   });
 
+  React.useEffect(() => {
+    setInterval(() => {
+      setTodo({
+        title: "go to the gym" + Math.random(),
+        description: "hit gum11",
+        id: 5,
+      });
+    },1000);
+  }, []);
+
   console.log("render");
-  setInterval(() => {
-    setTodo({
-      title: "go walk"+Math.random(),
-      description: "go for walk at 3",
-      id: 3,
-    });
-  }, 2000);
 
   return (
     <>
       <h5>Hi there</h5>
       {todo.title},{todo.description},{todo.id}
-      <PersonName firstName={todo.title}  lastName={todo.description}></PersonName>
+      <PersonName
+        firstName={todo.title}
+        lastName={todo.description}
+      ></PersonName>
     </>
   );
 }
 
-function PersonName(props){
-  return <div>
-    {props.firstName} {props.lastName}
-  </div>
+function PersonName(props) {
+  return (
+    <div>
+      {props.firstName} {props.lastName}
+    </div>
+  );
 }
 
 export default App;
