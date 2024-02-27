@@ -1,14 +1,16 @@
 function App(){
 
     return <div>
-        <CardWrapper innerComponent={<TextComponent/>} />
-        <CardWrapper innerComponent={<TextComponent/>} />
+        <CardWrapper>
+            hi there
+        </CardWrapper>
     </div>
 }
 
-function CardWrapper({innerComponent}){
+function CardWrapper({children}){
+    console.log(children);
     return <div style={{border:"2px solid black"}}>
-        {innerComponent}
+        {children}
     </div>
 
 }
