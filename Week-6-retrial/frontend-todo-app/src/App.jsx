@@ -40,8 +40,15 @@ function App() {
     <>
       <h5>Hi there</h5>
       {todo.title},{todo.description},{todo.id}
+      <PersonName firstName={todo.title}  lastName={todo.description}></PersonName>
     </>
   );
+}
+
+function PersonName(props){
+  return <div>
+    {props.firstName} {props.lastName}
+  </div>
 }
 
 export default App;
