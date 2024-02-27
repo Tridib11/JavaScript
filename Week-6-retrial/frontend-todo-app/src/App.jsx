@@ -28,9 +28,10 @@ function App() {
     id: 1,
   });
 
+  console.log("render");
   setInterval(() => {
     setTodo({
-      title: "go walk",
+      title: "go walk"+Math.random(),
       description: "go for walk at 3",
       id: 3,
     });
