@@ -1,9 +1,12 @@
+import { useEffect } from "react";
+
 function App(){
+    useEffect(function(){
+        alert('hi')
+    },[])
 
     return <div>
-        <CardWrapper>
-            hi there
-        </CardWrapper>
+        hi there
     </div>
 }
 
