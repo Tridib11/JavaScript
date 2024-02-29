@@ -6,11 +6,11 @@ function App() {
 
   let count=useMemo(()=>{
 
-      let count = 0;
+      let finalcount = 0;
       for (let i = 1; i <= inputValue; i++) {
-        count += i;
+        finalcount += i;
       }
-      return count;
+      return finalcount;
   },[inputValue])
   return (
     <div>
