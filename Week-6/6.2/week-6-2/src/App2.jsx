@@ -2,20 +2,20 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 
 function App() {
-  const [selectedId, setSelectId] = useState(1);
+  const [selectedId, setSelectedId] = useState(1);
   return (
     <div>
       <button onClick={function(){
-        setSelectId(1)
+        setSelectedId(1)
       }}>1</button>
       <button onClick={function(){
-        setSelectId(2)
+        setSelectedId(2)
       }}>2</button>
       <button onClick={function(){
-        setSelectId(3)
+        setSelectedId(3)
       }}>3</button>
       <button onClick={function(){
-        setSelectId(4)
+        setSelectedId(4)
       }}>4</button>
 
       <Todo id={selectedId} />
