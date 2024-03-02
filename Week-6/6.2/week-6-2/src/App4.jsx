@@ -1,25 +1,22 @@
-import { useState,memo, useCallback } from "react";
+import {memo,useState} from "react"
 
 function App(){
-    const[counter,setCounter]=useState(0)
-
-    const a =useCallback(function(){
-        console.log("Hi there");
-    },[])
-
+    const [count,setCount]=useState(0)
+    function logSomething(){
+        console.log("Child Clicked")
+    }
     return <div>
+        <ButtonComponent onClick={logSomething}/>
         <button onClick={()=>{
-            setCounter(counter+1)
-        }}>Counter ({counter})</button>
-
-        <Demo a={a}/>
+            setCount(count+1)
+        }}>Click me {count}</button>
     </div>
 }
 
-const Demo=memo(function({a}){
-    console.log("rerender");
+const ButtonComponent=memo((inputFunction)=>{
+    console.log("Child render");
     return <div>
-        hi there {a}
+        <button onClick={inputFunction}>Button CLicked</button>
     </div>
 })
 
