@@ -7,7 +7,7 @@ function App(){
         console.log("Hi there");
     }
     return <div>
-        <ButtonComponent inputFunction={inputFunction/>
+        <ButtonComponent inputFunction={inp/>
         <button onClick={()=>{
             setCount(count+1)
         }}>Clicked me ({count})</button>
