@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { debounce, throttle } from 'lodash';
+
 function App() {
   const [inputvalue, setInputValue] = useState(1);
   var [counter, setCounter] = useState(0);
@@ -9,12 +11,13 @@ function App() {
   return (
     <div>
       <input
-        type="text"
-        onChange={function (e) {
-          setInputValue(e.target.value);
-        }}
-        placeholder="Sum of number from 1 to n"
-      />
+  type="text"
+  onChange={debounce(function (e) {
+    setInputValue(e.target.value);
+  }, 300)} // 300ms debounce delay
+  placeholder="Sum of number from 1 to n"
+/>
+
       <br />
       Sum of number from 1 to {inputvalue} is {count}
       <br />
