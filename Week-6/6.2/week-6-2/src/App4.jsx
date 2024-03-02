@@ -16,7 +16,7 @@ function App(){
 const ButtonComponent=memo((inputFunction)=>{
     console.log("Child render");
     return <div>
-        <button onClick={inputFunction}>Button CLicked</button>
+        <button onClick={inputFunction}>Button Clicked</button>
     </div>
 })
 
