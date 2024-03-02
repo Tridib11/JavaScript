@@ -22,6 +22,23 @@ function App() {
   placeholder="Sum of number from 1 to n"
 />
 
+
+{   
+/*
+  With debouncing, the event handler will only be invoked after the specified delay (300ms in this case) after the last input event. Throttling, on the other hand, ensures that the event handler is called at most once per specified interval (300ms in this case), regardless of how many times the event is fired during that interval. Choose the one that fits your use case best.
+
+
+  throttling
+
+<input
+  type="text"
+  onChange={throttle(function (e) {
+    setInputValue(e.target.value);
+  }, 300)} // 300ms throttle delay
+  placeholder="Sum of number from 1 to n"
+/>
+*/}
+
       <br />
       Sum of number from 1 to {inputvalue} is {count}
       <br />
