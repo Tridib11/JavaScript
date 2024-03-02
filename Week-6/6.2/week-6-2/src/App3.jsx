@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { debounce, throttle } from 'lodash';
 
 function App() {
   const [inputvalue, setInputValue] = useState(1);
   var [counter, setCounter] = useState(0);
-  let count = 0;
-  for (let i = 0; i < inputvalue; i++) {
-    count += i;
-  }
+  
+  let count = useMemo(() => {
+    let finalCount = 0;
+    for (let i = 0; i < inputvalue; i++) {
+        finalCount += i;
+    }
+    return finalCount;
+  }, [inputvalue]);
   return (
     <div>
       <input
