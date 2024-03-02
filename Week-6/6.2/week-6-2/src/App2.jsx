@@ -8,8 +8,9 @@ function Todo({id}){
         .then(Response =>{
             setTodo(Response.data.todo)
         })
-    },[i])
+    },[id])
     return <div>
+        ID:{id}
         <h1>
             {todo.title}
         </h1>
