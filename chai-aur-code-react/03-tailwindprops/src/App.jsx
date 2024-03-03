@@ -10,10 +10,10 @@ function App() {
       <h1 className="bg-green-400 text-black p-4 rounded-xl mb-4">
         Tailwind Test
       </h1>
-      <div className="flex">
+      <div className="flex-wrap">
 
-      <Card title="MacBook" description="Some Description"></Card>
-      <Card title="Laptop" description="Some Description"></Card>
+      <Card title="MacBook" description="Some Description" btntext="visit me"></Card>
+      <Card title="Laptop" description="Some Description" btntext="dont click"></Card>
       </div>
       
     </div>
