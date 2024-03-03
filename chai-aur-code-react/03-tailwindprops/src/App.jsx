@@ -12,8 +12,8 @@ function App() {
       </h1>
       <div className="flex">
 
-      <Card></Card>
-      <Card></Card>
+      <Card title="MacBook" description="Some Description"></Card>
+      <Card title="Laptop" description="Some Description"></Card>
       </div>
       
     </div>
