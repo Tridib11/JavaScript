@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App3.jsx'
+import App from './AppFocus.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
