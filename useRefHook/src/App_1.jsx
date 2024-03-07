@@ -6,10 +6,10 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
   const btnref = useRef();
-  useEffect(() => { 
+  useEffect(() => {
     console.log(`rendering for the first time`);
-    ref.current.style.background="red"
-  },[]);
+    ref.current.style.background = "red";
+  }, []);
 
   return (
     <>
