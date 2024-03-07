@@ -8,7 +8,7 @@ function App() {
   const btnref = useRef();
   useEffect(() => {
     console.log(`rendering for the first time`);
-    ref.current.style.background = "red";
+   btnref.current.style.background = "red";
   }, []);
 
   return (
@@ -33,6 +33,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <button onClick={()=>{
+        btnref.current.style.display="none"
+      }}>Change me</button>
     </>
   );
 }
