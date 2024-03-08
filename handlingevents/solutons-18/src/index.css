@@ -10,10 +10,18 @@ padding: 0;}
   flex-wrap: wrap;
 }
 
-nav,ul{
+nav, ul {
   display: flex;
-  gap: 4px;
+  gap: 20px;
+  padding: 12px 3px;
+  background-color: rgb(46, 46, 44);
+  margin-bottom: 9px;
+  color: white;
+  position: relative;
+  justify-content: flex-end; /* Align items to the right */
+  margin-left: auto; /* Push elements to the right */
 }
+
 li{
   list-style: none;
 }
