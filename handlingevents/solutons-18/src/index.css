@@ -1,3 +1,5 @@
+*{margin: 0;
+padding: 0;}
 .card{
   border: 2px solid black;
   max-width: 23vw;
