@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react'
+import Navbar from './components/Navbar'
 //https://jsonplaceholder.typicode.com/posts
 function App() {
   const[cards,setCards]=useState([])
@@ -15,6 +16,7 @@ function App() {
     
   return (
     <div>
+      <Navbar/>
       <div className="container">
         {cards.map((card)=>{
           return <div className="card">
