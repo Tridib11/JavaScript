@@ -6,8 +6,11 @@ padding: 0;}
 }
 .container{
   display: flex;
-  gap: 34px;
+  justify-content: space-between;
   flex-wrap: wrap;
+}
+.card{
+  margin: 9px;
 }
 
 nav, ul {
