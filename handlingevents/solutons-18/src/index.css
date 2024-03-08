@@ -7,3 +7,11 @@
   gap: 34px;
   flex-wrap: wrap;
 }
+
+nav,ul{
+  display: flex;
+  gap: 4px;
+}
+li{
+  list-style: none;
+}
