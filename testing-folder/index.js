@@ -34,11 +34,21 @@ app.post("/admin/login",adminAuthentication, (req, res) => {
 });
 
 app.post("/admin/courses", (req, res) => {
-  // logic to create a course
+  const course=req.body
+  course.id=Date.now()
+  COURSES.push(course)
+  res.json({message:"Course created Successfully",courseId:course.id})
 });
 
 app.put("/admin/courses/:courseId", (req, res) => {
-  // logic to edit a course
+  const courseid=parseInt(req.params.courseId)
+  const course=COURSES.find(c=>c.id===courseid)
+  if(course){
+    Object.assign(course,req.body)
+    res.json({message:"Course updated Successfully"})
+  }else{
+    res.status(404).json({message:"Course not found"})
+  }
 });
 
 app.get("/admin/courses", (req, res) => {
