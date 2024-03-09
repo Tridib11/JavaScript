@@ -21,7 +21,8 @@ const userAuthentication=(req,res,next)=>{
     const {username,password}=req.headers;
     const user=USERS.find(a=>a.username===username && a.password===password)
     if(user){
-        next()
+        req.user=user
+         next()
     }else{
         res.statuc(403).json({message:"User Authntication Falied"})
     }
