@@ -72,8 +72,8 @@ app.post("/users/signup", (req, res) => {
   res.json({message:"User Created Successfully"})
 });
 
-app.post("/users/login", (req, res) => {
-  // logic to log in user
+app.post("/users/login", userAuthentication,(req, res) => {
+  res.json({message:"Logged in Successfully"})
 });
 
 app.get("/users/courses", (req, res) => {
