@@ -7,6 +7,16 @@ let ADMINS = [];
 let USERS = [];
 let COURSES = [];
 
+const adminAuthentication=(req,res,next)=>{
+    const {username,password}=req.headers;
+    const admin=ADMINS.find(a=>a.username===username && a.password===password)
+    if(admin){
+        next()
+    }else{
+        res.status(403).json({message:'Admin created successfully'})
+    }
+
+}
 // Admin routes
 app.post("/admin/signup", (req, res) => {
   const admin = req.body;
