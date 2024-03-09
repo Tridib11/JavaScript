@@ -95,8 +95,8 @@ app.post("/users/courses/:courseId", userAuthentication, (req, res) => {
   }
 });
 
-app.get("/users/purchasedCourses", (req, res) => {
-  // logic to view purchased courses
+app.get("/users/purchasedCourses",userAuthentication ,(req, res) => {
+  res.json({purchasedCourses})
 });
 
 app.listen(3000, () => {
