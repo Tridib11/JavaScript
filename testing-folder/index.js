@@ -57,7 +57,9 @@ app.get("/admin/courses", (req, res) => {
 
 // User routes
 app.post("/users/signup", (req, res) => {
-  // logic to sign up user
+  const user={...req.body,purchasedCourses:[]}
+  USERS.push(user)
+  res.json({message:"User Created Successfully"})
 });
 
 app.post("/users/login", (req, res) => {
