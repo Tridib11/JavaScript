@@ -77,7 +77,7 @@ app.post("/users/login", userAuthentication,(req, res) => {
 });
 
 app.get("/users/courses", (req, res) => {
-  // logic to list all courses
+  res.json({Courses:COURSES.filter(c=>c.published)})
 });
 
 app.post("/users/courses/:courseId", (req, res) => {
