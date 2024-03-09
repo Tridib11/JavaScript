@@ -13,9 +13,18 @@ const adminAuthentication=(req,res,next)=>{
     if(admin){
         next()
     }else{
-        res.status(403).json({message:'Admin created successfully'})
+        res.status(403).json({message:'Admin authentication successfully'})
     }
+}
 
+const userAuthentication=(req,res,next)=>{
+    const {username,password}=req.headers;
+    const user=USERS.find(a=>a.username===username && a.password===password)
+    if(user){
+        next()
+    }else{
+        res.statuc(403).json({message:"User Authntication Falied"})
+    }
 }
 // Admin routes
 app.post("/admin/signup", (req, res) => {
