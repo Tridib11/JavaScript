@@ -80,8 +80,15 @@ app.get("/users/courses", (req, res) => {
   res.json({Courses:COURSES.filter(c=>c.published)})
 });
 
-app.post("/users/courses/:courseId", (req, res) => {
-  // logic to purchase a course
+app.post("/users/courses/:courseId", userAuthentication,(req, res) => {
+  const courseId=Number(req.params.courseId)
+  const course=COURSES.find(c=>c.id===courseId && c.published)
+  if(course){
+    req.user.purchasedCourses.push(courseId)
+    res.json({message:"Course Bought Successfully"})
+  }else{
+    res.status(403).json({message:"Course not found or not available"})
+  }
 });
 
 app.get("/users/purchasedCourses", (req, res) => {
