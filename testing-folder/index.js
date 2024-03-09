@@ -20,7 +20,7 @@ app.post("/admin/signup", (req, res) => {
 });
 
 app.post("/admin/login", (req, res) => {
-  // logic to log in admin
+  res.json({ message: "Logged in Successfully" });
 });
 
 app.post("/admin/courses", (req, res) => {
