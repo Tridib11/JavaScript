@@ -95,14 +95,14 @@ app.post("/users/courses/:courseId", userAuthentication, (req, res) => {
   }
 });
 
-app.get("/users/purchasedCourses",userAuthentication ,(req, res) => {
-  res.json({purchasedCourses})
+app.get("/users/purchasedCourses", userAuthentication, (req, res) => {
+  const purchasedCourses = COURSES.filter((c) =>
+    req.user.purchasedCourses.includes(c.id)
+  );
+
+  res.json({ purchasedCourses });
 });
 
 app.listen(3000, () => {
   console.log("Server is listening on port 3000");
-});
-
-app.listen(8000, () => {
-  console.log("Server started");
 });
