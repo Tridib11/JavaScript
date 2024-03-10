@@ -24,9 +24,12 @@ function memo_Testing() {
       });
     }, 5000);
   }, []);
-  const calculateCryptoReturns = useCallback(function () {
-    return exchange1Data.returns + exchange2Data.returns;
-  },[exchange1Data,exchange2Data]);
+  const calculateCryptoReturns = useCallback(
+    function () {
+      return exchange1Data.returns + exchange2Data.returns;
+    },
+    [exchange1Data, exchange2Data]
+  );
   return (
     <div>
       <CryptoGainsCalculator calculateCryptoReturns={calculateCryptoReturns} />
