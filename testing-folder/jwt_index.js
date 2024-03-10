@@ -56,11 +56,8 @@ app.post("/admin/login", (req, res) => {
 app.post("/admin/courses",authenticateJwt, (req, res) => {
   console.log(req.user.username)
   const course = req.body;
-  course.id = Date.now();
-  course.published = false;
-  COURSES.push(course);
+  COURSES.push({...course,id:COURSES.length+1});
   res.json({ message: "Course created Successfully", courseId: course.id });
-
 });
 
 app.put("/admin/courses/:courseId",authenticateJwt, (req, res) => {
