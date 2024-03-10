@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useMemo } from 'react'
 
-function useMemo() {
+function useMemo_testing() {
   const[exchange1Data,setExchange1Data]=useState({})
   const[exchange2Data,setExchange2Data]=useState({})
   const[bankData,setBankData]=useState({})
@@ -26,8 +26,12 @@ function useMemo() {
   },[])
 
 
-  console.log("Hi there before")
-  const cryptoReturns=exchange1Data.returns+exchange2Data.returns
+
+  const cryptoReturns=useMemo(()=>{
+    console.log("Hi there before")
+    return exchange1Data.returns+exchange2Data.returns
+  },[exchange1Data,exchange2Data])
+
   console.log("Hi there after")
   const incomeTax=(cryptoReturns+bankData.income)*0.3
   return (
@@ -37,4 +41,4 @@ function useMemo() {
   )
 }
 
-export default useMemo
+export default useMemo_testing
