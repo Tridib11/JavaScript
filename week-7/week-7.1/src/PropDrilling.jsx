@@ -12,20 +12,18 @@ function App() {
 
 function Count({count,setCount}){
   return <div>
-    <CountRenderer/>
+    <CountRenderer count={count}/>
     <Buttons count={count} setCount={setCount}/>
   </div>
 
 }
-function CountRenderer(){
-  const count=1
+function CountRenderer({count}){
   return <div>
     {count}
   </div>
 }
 
 function Buttons({count,setCount}){
-  const count=1
   return <div>
     <button onClick={()=>{
       setCount(count+1)
