@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-// import NameCompoenent from './useMemo_Usagecomponents/NameCompoenent'
-// import ResultCompoenent from './useMemo_Usagecomponents/ResultComponent'
+import NameComponent from './useMemo_Usagecomponents/NameCompoenent'
+import ResultComponent from './useMemo_Usagecomponents/ResultComponent'
 
-import NameComponent from './ReactMemoComponent/NameComponent'
-import ResultComponent from './ReactMemoComponent/ResultComponent'
+// import NameComponent from './ReactMemoComponent/NameComponent'
+// import ResultComponent from './ReactMemoComponent/ResultComponent'
 function App() {
   return (
     <>
