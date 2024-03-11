@@ -1,8 +1,8 @@
 import "./App.css";
 import React, { lazy } from "react";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
-import Dashboard from lazy(()=> "./components/Dashboard");
-import Landing from lazy(()=>"./components/Landing");
+const Dashboard = lazy(()=> import("./components/Dashboard"));
+const Landing = lazy(()=> import("./components/Landing"));
 
 
 function App() {
