@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './LazyLoading.jsx'
+import App from './Example.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
