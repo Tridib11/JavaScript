@@ -8,7 +8,7 @@ const Landing = lazy(()=> import("./components/Landing"));
 
 function App() {
 
-    //Suspense API
+    //Suspense API(Asynchronus Fetching from the backend)
 
   return (
     <div>  
