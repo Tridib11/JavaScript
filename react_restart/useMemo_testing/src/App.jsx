@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <NameCompoenent Name="Tridib"/>
-      <ResultCompoenent marks={80}/>
+      <ResultCompoenent marks={20}/>
     </>
   )
 }
