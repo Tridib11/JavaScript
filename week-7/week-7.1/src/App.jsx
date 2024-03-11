@@ -5,7 +5,7 @@ import Landing from "./components/Landing";
 function App() {
   return (
     <div>
-      <div style={{background:"black", color:'white'}}>
+      <div style={{ background: "black", color: "white" }}>
         Hi this is a topbar
       </div>
       <BrowserRouter>
