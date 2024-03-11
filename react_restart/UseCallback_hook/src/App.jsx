@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './App.css'
 import ButtonCount from './Components/ButtonCount'
@@ -9,6 +9,9 @@ function App() {
   const incrementCount=()=>{
     setCount(count+1)
   }
+  useEffect(()=>{
+    console.log("Inside Use Effect");
+  },[incrementCount])
   return (
     <>
       <div>
