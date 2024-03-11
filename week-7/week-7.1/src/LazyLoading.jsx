@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { lazy } from "react";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+
 const Dashboard = lazy(()=> import("./components/Dashboard"));
 const Landing = lazy(()=> import("./components/Landing"));
 
