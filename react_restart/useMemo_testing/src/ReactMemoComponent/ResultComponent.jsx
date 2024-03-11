@@ -14,7 +14,7 @@ const ResultCompoenent = ({ marks, subject }) => {
 
   const percentageMarks = useMemo(() => {
     return (80 * 100) / 100;
-  }, [makrs]);
+  }, [marks]);
   return (
     <div>
       <h2>Result is : {marks}</h2>
