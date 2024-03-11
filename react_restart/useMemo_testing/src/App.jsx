@@ -1,14 +1,17 @@
 import { useState } from 'react'
 import './App.css'
-import NameCompoenent from './components/NameCompoenent'
-import ResultCompoenent from './components/ResultComponent'
+// import NameCompoenent from './useMemo_Usagecomponents/NameCompoenent'
+// import ResultCompoenent from './useMemo_Usagecomponents/ResultComponent'
+
+import NameComponent from './ReactMemoComponent/NameComponent'
+import ResultComponent from './ReactMemoComponent/ResultComponent'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <NameCompoenent Name="Tridib"/>
-      <ResultCompoenent marks={20}/>
+      <NameComponent Name="Tridib"/>
+      <ResultComponent marks={120}/>
     </>
   )
 }
