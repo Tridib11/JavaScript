@@ -24,4 +24,4 @@ const ResultCompoenent = ({ marks, subject }) => {
   );
 };
 
-export default React.memo(ResultCompoenent);
+export default ResultCompoenent;
