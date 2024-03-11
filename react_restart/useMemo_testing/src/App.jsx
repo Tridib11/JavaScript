@@ -6,8 +6,6 @@ import './App.css'
 import NameComponent from './ReactMemoComponent/NameComponent'
 import ResultComponent from './ReactMemoComponent/ResultComponent'
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <NameComponent Name="Tridib"/>
