@@ -5,14 +5,15 @@ function App() {
   return (
     <div>
         <Count count={count}/>
-        <Buttons count={count} setCount={setCount}/>
+        {/* <Buttons count={count} setCount={setCount}/> */}
     </div>
   )
 }
 
-function Count({count}){
+function Count({count,setCount}){
   return <div>
     {count}
+    <Buttons count={count} setCount={setCount}/>
   </div>
 
 }
