@@ -4,7 +4,7 @@ function App() {
     const [count,setCount]=useState(0)
   return (
     <div>
-        <Count count={count}/>
+        <Count count={count} setCount={setCount}/>
         {/* <Buttons count={count} setCount={setCount}/> */}
     </div>
   )
