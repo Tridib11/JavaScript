@@ -4,17 +4,28 @@ function App() {
     const [count,setCount]=useState(0)
   return (
     <div>
-        <Count/>
+        <Count count={count}/>
         <Buttons/>
     </div>
   )
 }
 
-function Count(){
+function Count({count}){
+  return <div>
+    {count}
+  </div>
 
 }
 
 function Buttons(){
+  return <div>
+    <button onClick={()=>{
+      
+    }}>Increase</button>
+    <button onClick={()=>{
+
+    }}>Decrease</button>
+  </div>
 
 }
 
