@@ -1,47 +1,53 @@
-import {useContext } from 'react'
-import './App.css'
-import { CountContext } from './Context'
+import { useContext } from "react";
+import { CountContext } from "./Context";
 
 function App() {
-
   return (
     <div>
-        <Count/>
+      <Count />
     </div>
-  )
+  );
 }
 
-function Count(){
+function Count() {
   console.log("Count re-rendered");
-  return <div>
-    <CountRenderer/>
-    <Buttons setCount={setCount}/>
-  </div>
-}
-
-function CountRenderer(){
-  const count=0
-  return <div>
-    {count}
-  </div>
-}
-
-function Buttons(){
-  const count=0
   return (
     <div>
-      <button onClick={()=>{
-        setCount(count+1)
-      }}>
+      <CountRenderer />
+      <Buttons setCount={setCount} />
+    </div>
+  );
+}
+
+function CountRenderer() {
+  const count = 0;
+  return (
+    <div>
+      <b>{count}</b>
+    </div>
+  );
+}
+
+function Buttons() {
+  const count = 0;
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
         Increase
       </button>
-      <button onClick={()=>{
-        setCount(count-1)
-      }}>
+      <button
+        onClick={() => {
+          setCount(count - 1);
+        }}
+      >
         Decrease
       </button>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
