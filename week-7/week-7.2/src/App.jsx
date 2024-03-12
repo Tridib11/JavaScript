@@ -15,6 +15,7 @@ function App() {
 }
 
 function Count({setCount}){
+  console.log("Count re-rendered");
   return <div>
     <CountRenderer/>
     <Buttons setCount={setCount}/>
