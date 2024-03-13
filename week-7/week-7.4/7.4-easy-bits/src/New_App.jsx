@@ -1,4 +1,3 @@
-import "./App.css";
 import { RecoilRoot, useRecoilValue } from "recoil";
 import { todosAtomFamily } from "./atoms_n";
 
