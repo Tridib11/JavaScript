@@ -21,7 +21,7 @@ export const messagingAtom=atom({
 
 export const totalNotificationSelector=selector({
     key:"totalNotificationSelector",
-    value:({get})=>{
+    get:({get})=>{
         const networkAtomCount=get(networkAtom);
         const jobsAtomCount=get(jobsAtom)
         const notificationAtomCount=get(notificationAtom)
