@@ -17,8 +17,6 @@ export const messagingAtom=atom({
     default:0
 })
 
-
-
 export const totalNotificationSelector=selector({
     key:"totalNotificationSelector",
     get:({get})=>{
