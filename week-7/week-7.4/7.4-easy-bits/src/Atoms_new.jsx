@@ -2,9 +2,7 @@ import { atom, selector } from "recoil";
 
 export const notifications = atom({
     key: "networkAtom",
-    default: {
-        
-    });
+    default: {});
 
 export const totalNotificationSelector = selector({
     key: "totalNotificationSelector",
