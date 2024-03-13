@@ -1,8 +1,14 @@
 import { useState } from "react";
-import { useRecoilValue } from "recoil";
+import { RecoilRoot, useRecoilValue } from "recoil";
 import { networkAtom } from "./Atoms";
 
 function App() {
+ return <RecoilRoot>
+  <MainApp/>
+ </RecoilRoot>
+}
+
+function MainApp(){
   const networkNotificationCount=useRecoilValue(networkAtom)
 
   return (
