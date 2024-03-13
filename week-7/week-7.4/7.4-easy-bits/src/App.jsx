@@ -1,21 +1,22 @@
-import { useState } from 'react'
-
+import { useState } from "react";
+import { useRecoilValue } from "recoil";
+import { networkAtom } from "./Atoms";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const networkNotificationCount=useRecoilValue(networkAtom)
 
   return (
-    <>
-     <button>Home</button>
+    <div>
+      <button>Home</button>
 
-     <button>My network ()</button>
-     <button>Jobs ()</button>
-     <button>Messaging ()</button>
-     <button>Notifications ()</button>
-     
-     <button>Me</button>
-    </>
-  )
+      <button>My network ({networkNotificationCount>=100?"99+":networkNotificationCount})</button>
+      <button>Jobs ()</button>
+      <button>Messaging ()</button>
+      <button>Notifications ()</button>
+
+      <button>Me</button>
+    </div>
+  );
 }
 
-export default App
+export default App;
