@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { RecoilRoot, useRecoilValue } from "recoil";
 import { networkAtom } from "./Atoms";
 
