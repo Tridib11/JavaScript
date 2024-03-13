@@ -6,6 +6,8 @@ import "./App.css";
 function App() {
   return (
     <>
+    <h1>Flex</h1>
+    <br />
       <div className="flex justify-center">
         <div className="bg-red-500">hi</div>
         <div className="bg-green-500">hi</div>
@@ -13,6 +15,9 @@ function App() {
       </div>
 
       <br />
+      <br />
+
+      <h1>Grid</h1>
       <br />
 
       <div className="grid grid-cols-10  ">
