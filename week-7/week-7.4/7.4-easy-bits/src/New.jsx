@@ -2,8 +2,6 @@
 import './App.css'
 import { RecoilRoot, useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
 import { notifications, totalNotificationSelector } from './Atoms_new'
-import { useEffect } from 'react'
-import axios from 'axios'
 
 function App2() {
   return <RecoilRoot>
