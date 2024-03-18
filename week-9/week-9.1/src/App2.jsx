@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import './App.css'
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
-function App(){
-    return (
-        <>
-            <MyComponent/>
-        </>
-    )
+function App() {
+  const [render, setRender] = useState(true);
+  useEffect(() => {
+    setInterval(() => {
+      setRender(r=>!r);
+    }, 5000);
+  }, []);
+  return <>{render ? <MyComponent /> : <div></div>}</>;
 }
 
-
 function MyComponent() {
+  const [count, setCount] = useState(0);
   useEffect(() => {
     // Perform setup or data fetching here
     console.log("Component mounted");
@@ -22,9 +24,7 @@ function MyComponent() {
 
   // Render UI
 
-  return <div>
-    From inside my component
-  </div>
+  return <div>From inside my component</div>;
 }
 
-export default App
+export default App;
