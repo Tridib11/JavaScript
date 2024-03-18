@@ -11,8 +11,7 @@ function App() {
   return <>{render ? <MyComponent /> : <div></div>}</>;
 }
 
-function MyComponent() {
-  const [count, setCount] = useState(0);
+function MyComponent() {;
   useEffect(() => {
     // Perform setup or data fetching here
     console.log("Component mounted");
