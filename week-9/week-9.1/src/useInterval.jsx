@@ -1,5 +1,16 @@
 import { useEffect, useState } from 'react';
 
+
+function useInterval(fn,timeOut){
+    useEffect(()=>{
+        setInterval(()=>{
+            fn()
+        },timeOut)
+        return ()=>{
+            clearInterval(timeOut)
+        }
+    },[timeOut])
+}
 function App() {
   const [count, setCount] = useState(0);
 
