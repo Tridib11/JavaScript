@@ -1,30 +1,37 @@
-import './App.css'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import "./App.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-function App() {
-  const [todos, setTodos] = useState([])
+function useTodos() {
+  const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    axios.get("https://sum-server.100xdevs.com/todos")
-      .then(res => {
-        setTodos(res.data.todos);
-      })
-  }, [])
+    axios.get("https://sum-server.100xdevs.com/todos").then((res) => {
+      setTodos(res.data.todos);
+    });
+  }, []);
+  return todos;
+}
 
+function App() {
+  const todos = useTodos();
   return (
     <>
-      {todos.map(todo => <Track todo={todo} />)}
+      {todos.map((todo) => (
+        <Track todo={todo} />
+      ))}
     </>
-  )
+  );
 }
 
 function Track({ todo }) {
-  return <div>
-    {todo.title}
-    <br />
-    {todo.description}
-  </div>
+  return (
+    <div>
+      {todo.title}
+      <br />
+      {todo.description}
+    </div>
+  );
 }
 
-export default App
+export default App;
