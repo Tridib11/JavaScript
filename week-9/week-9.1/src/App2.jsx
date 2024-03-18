@@ -1,4 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import './App.css'
+
+function App(){
+    return (
+        <>
+            <MyComponent/>
+        </>
+    )
+}
+
 
 function MyComponent() {
   useEffect(() => {
@@ -11,4 +21,10 @@ function MyComponent() {
   }, []);
 
   // Render UI
+
+  return <div>
+    From inside my component
+  </div>
 }
+
+export default App
