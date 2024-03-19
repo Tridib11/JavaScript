@@ -4,6 +4,7 @@ function App() {
     return (
     <div>
       <Todo title='gym' description='gyming'/>
+      <Todo title='game' description='gaming'/>
     </div>
   )
 }
